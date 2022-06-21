@@ -40,6 +40,7 @@ namespace KalkulatorKcal
             this.wzrost = new System.Windows.Forms.NumericUpDown();
             this.podaj_kcal = new System.Windows.Forms.Label();
             this.kcal = new System.Windows.Forms.NumericUpDown();
+            this.przycisk_bmi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.wiek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wzrost)).BeginInit();
@@ -216,6 +217,16 @@ namespace KalkulatorKcal
             0});
             this.kcal.ValueChanged += new System.EventHandler(this.kcal_ValueChanged);
             // 
+            // przycisk_bmi
+            // 
+            this.przycisk_bmi.Location = new System.Drawing.Point(442, 135);
+            this.przycisk_bmi.Name = "przycisk_bmi";
+            this.przycisk_bmi.Size = new System.Drawing.Size(94, 29);
+            this.przycisk_bmi.TabIndex = 12;
+            this.przycisk_bmi.Text = "BMI";
+            this.przycisk_bmi.UseVisualStyleBackColor = true;
+            this.przycisk_bmi.Click += new System.EventHandler(this.przycisk_bmi_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -223,6 +234,7 @@ namespace KalkulatorKcal
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(895, 446);
+            this.Controls.Add(this.przycisk_bmi);
             this.Controls.Add(this.kcal);
             this.Controls.Add(this.podaj_kcal);
             this.Controls.Add(this.wzrost);
@@ -257,6 +269,7 @@ namespace KalkulatorKcal
         private System.Windows.Forms.NumericUpDown wzrost;
         private System.Windows.Forms.Label podaj_kcal;
         private System.Windows.Forms.NumericUpDown kcal;
+        private System.Windows.Forms.Button przycisk_bmi;
     }
 }
 

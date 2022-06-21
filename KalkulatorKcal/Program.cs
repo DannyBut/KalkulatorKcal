@@ -8,9 +8,6 @@ namespace KalkulatorKcal
 {
     static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -18,6 +15,9 @@ namespace KalkulatorKcal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            Form1 bmi = new Form1();
+            bmi.BMI();
         }
     }
 }
