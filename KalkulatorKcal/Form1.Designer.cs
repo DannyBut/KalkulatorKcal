@@ -219,12 +219,15 @@ namespace KalkulatorKcal
             // 
             // przycisk_bmi
             // 
+            this.przycisk_bmi.BackColor = System.Drawing.Color.Aqua;
+            this.przycisk_bmi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.przycisk_bmi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.przycisk_bmi.Location = new System.Drawing.Point(442, 135);
             this.przycisk_bmi.Name = "przycisk_bmi";
             this.przycisk_bmi.Size = new System.Drawing.Size(94, 29);
             this.przycisk_bmi.TabIndex = 12;
             this.przycisk_bmi.Text = "BMI";
-            this.przycisk_bmi.UseVisualStyleBackColor = true;
+            this.przycisk_bmi.UseVisualStyleBackColor = false;
             this.przycisk_bmi.Click += new System.EventHandler(this.przycisk_bmi_Click);
             // 
             // Form1

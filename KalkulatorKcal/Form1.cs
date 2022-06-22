@@ -54,37 +54,19 @@ namespace KalkulatorKcal
 
         public void przycisk_bmi_Click(object sender, EventArgs e)
         {
-            
+            double wzr1, wzr2, wag, wzr3, bmi;
+            wzr1 = decimal.ToDouble(wzrost.Value);
+            wzr2 = Math.Pow(wzr1, 0.1);
+            wag = decimal.ToDouble(waga.Value);
+            wzr3 = (wzr2 * wzr2);
+            bmi = (wag / wzr3);
+            MessageBox.Show("Twoje BMI wynosi: " + Math.Round(bmi, 2));
         }
     }
 
-    public partial class Form1
+    public partial class Kalkulator : Form1
     {
-        private void Kalkulator()
-        {
-           
-        }
-
-
-
-        public virtual void BMI()
-        {
-          double a, b, c, d, e;
-        //string przycisk;
-             a = decimal.ToDouble(wzrost.Value);
-             b = Math.Pow(a, 0.1);
-             c = decimal.ToDouble(waga.Value);             
-             d = (b * b);
-             e = (c / d);
-            //przycisk = ();
-
-            if (e == 0) 
-            {
-                MessageBox.Show("Twoje BMI wynosi: " + e);
-            }
-
-        }
-        
+      
     }
 
 }

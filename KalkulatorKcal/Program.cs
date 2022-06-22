@@ -14,10 +14,7 @@ namespace KalkulatorKcal
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-
-            Form1 bmi = new Form1();
-            bmi.BMI();
+            Application.Run(new Form1());         
         }
     }
 }
