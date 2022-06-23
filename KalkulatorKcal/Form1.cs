@@ -20,6 +20,9 @@ namespace KalkulatorKcal
 
         public double Kcal { get; set; }
 
+        public double Pal { get; set; }
+
+
         public Form1()
         {
             InitializeComponent();
@@ -67,6 +70,17 @@ namespace KalkulatorKcal
             Kcal = kcl;
         }
 
+        private void pal_ValueChanged(object sender, EventArgs e)
+        {
+            double pal1, pal2;
+            pal1 = decimal.ToDouble(pal.Value);
+            pal2 = pal1 * 0.1;            
+            Pal = pal2;
+
+            MessageBox.Show("PAL wynosi: " + Math.Round(pal2, 1));
+
+        }
+
         public void przycisk_bmi_Click(object sender, EventArgs e)
         {
             var kalkulator = new Kalkulator();
@@ -75,7 +89,7 @@ namespace KalkulatorKcal
             MessageBox.Show("Twoje BMI wynosi: " + Math.Round(wynikBMI, 2));
         }
 
-        private void schudnac_Click(object sender, EventArgs e)
+        private void brm_Click(object sender, EventArgs e)
         {
             var kalkulator = new Kalkulator();
             var wynikBMRmezczyzna = kalkulator.DEFICYT_Mezczyzna_Metoda(Waga, Wzrost, Wiek);
@@ -102,6 +116,8 @@ namespace KalkulatorKcal
 
             }
         }
+
+       
     }
 
     public class Kalkulator : Form1

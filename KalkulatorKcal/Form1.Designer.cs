@@ -41,16 +41,19 @@ namespace KalkulatorKcal
             this.podaj_kcal = new System.Windows.Forms.Label();
             this.kcal = new System.Windows.Forms.NumericUpDown();
             this.przycisk_bmi = new System.Windows.Forms.Button();
-            this.schudnac = new System.Windows.Forms.Button();
+            this.brm = new System.Windows.Forms.Button();
             this.przytyc = new System.Windows.Forms.Button();
             this.parametry = new System.Windows.Forms.GroupBox();
             this.funkcje = new System.Windows.Forms.GroupBox();
+            this.podaj_pal = new System.Windows.Forms.Label();
+            this.pal = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.wiek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wzrost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kcal)).BeginInit();
             this.parametry.SuspendLayout();
             this.funkcje.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pal)).BeginInit();
             this.SuspendLayout();
             // 
             // mezczyzna
@@ -59,7 +62,7 @@ namespace KalkulatorKcal
             this.mezczyzna.AutoSize = true;
             this.mezczyzna.BackColor = System.Drawing.Color.Honeydew;
             this.mezczyzna.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mezczyzna.Location = new System.Drawing.Point(16, 98);
+            this.mezczyzna.Location = new System.Drawing.Point(6, 56);
             this.mezczyzna.Name = "mezczyzna";
             this.mezczyzna.Size = new System.Drawing.Size(125, 24);
             this.mezczyzna.TabIndex = 1;
@@ -73,7 +76,7 @@ namespace KalkulatorKcal
             this.kobieta.AutoSize = true;
             this.kobieta.BackColor = System.Drawing.Color.Honeydew;
             this.kobieta.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.kobieta.Location = new System.Drawing.Point(16, 128);
+            this.kobieta.Location = new System.Drawing.Point(6, 86);
             this.kobieta.Name = "kobieta";
             this.kobieta.Size = new System.Drawing.Size(94, 24);
             this.kobieta.TabIndex = 2;
@@ -86,7 +89,7 @@ namespace KalkulatorKcal
             this.plec.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.plec.AutoSize = true;
             this.plec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.plec.Location = new System.Drawing.Point(16, 75);
+            this.plec.Location = new System.Drawing.Point(6, 33);
             this.plec.Name = "plec";
             this.plec.Size = new System.Drawing.Size(124, 20);
             this.plec.TabIndex = 3;
@@ -236,18 +239,18 @@ namespace KalkulatorKcal
             this.przycisk_bmi.UseVisualStyleBackColor = false;
             this.przycisk_bmi.Click += new System.EventHandler(this.przycisk_bmi_Click);
             // 
-            // schudnac
+            // brm
             // 
-            this.schudnac.BackColor = System.Drawing.Color.Aqua;
-            this.schudnac.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.schudnac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.schudnac.Location = new System.Drawing.Point(97, 105);
-            this.schudnac.Name = "schudnac";
-            this.schudnac.Size = new System.Drawing.Size(94, 29);
-            this.schudnac.TabIndex = 15;
-            this.schudnac.Text = "DEFICYT";
-            this.schudnac.UseVisualStyleBackColor = false;
-            this.schudnac.Click += new System.EventHandler(this.schudnac_Click);
+            this.brm.BackColor = System.Drawing.Color.Aqua;
+            this.brm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.brm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.brm.Location = new System.Drawing.Point(97, 105);
+            this.brm.Name = "brm";
+            this.brm.Size = new System.Drawing.Size(94, 29);
+            this.brm.TabIndex = 15;
+            this.brm.Text = "BRM";
+            this.brm.UseVisualStyleBackColor = false;
+            this.brm.Click += new System.EventHandler(this.brm_Click);
             // 
             // przytyc
             // 
@@ -264,6 +267,8 @@ namespace KalkulatorKcal
             // 
             // parametry
             // 
+            this.parametry.Controls.Add(this.pal);
+            this.parametry.Controls.Add(this.podaj_pal);
             this.parametry.Controls.Add(this.plec);
             this.parametry.Controls.Add(this.mezczyzna);
             this.parametry.Controls.Add(this.kobieta);
@@ -286,7 +291,7 @@ namespace KalkulatorKcal
             // funkcje
             // 
             this.funkcje.Controls.Add(this.przycisk_bmi);
-            this.funkcje.Controls.Add(this.schudnac);
+            this.funkcje.Controls.Add(this.brm);
             this.funkcje.Controls.Add(this.przytyc);
             this.funkcje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.funkcje.Location = new System.Drawing.Point(687, 13);
@@ -295,6 +300,28 @@ namespace KalkulatorKcal
             this.funkcje.TabIndex = 18;
             this.funkcje.TabStop = false;
             this.funkcje.Text = "Funkcje";
+            // 
+            // podaj_pal
+            // 
+            this.podaj_pal.AutoSize = true;
+            this.podaj_pal.Location = new System.Drawing.Point(7, 129);
+            this.podaj_pal.Name = "podaj_pal";
+            this.podaj_pal.Size = new System.Drawing.Size(103, 20);
+            this.podaj_pal.TabIndex = 12;
+            this.podaj_pal.Text = "Podal PAL:";
+            // 
+            // pal
+            // 
+            this.pal.Location = new System.Drawing.Point(9, 164);
+            this.pal.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.pal.Name = "pal";
+            this.pal.Size = new System.Drawing.Size(91, 27);
+            this.pal.TabIndex = 13;
+            this.pal.ValueChanged += new System.EventHandler(this.pal_ValueChanged);
             // 
             // Form1
             // 
@@ -314,6 +341,7 @@ namespace KalkulatorKcal
             this.parametry.ResumeLayout(false);
             this.parametry.PerformLayout();
             this.funkcje.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,10 +359,12 @@ namespace KalkulatorKcal
         private System.Windows.Forms.Label podaj_kcal;
         private System.Windows.Forms.NumericUpDown kcal;
         private System.Windows.Forms.Button przycisk_bmi;
-        private System.Windows.Forms.Button schudnac;
+        private System.Windows.Forms.Button brm;
         private System.Windows.Forms.Button przytyc;
         private System.Windows.Forms.GroupBox parametry;
         private System.Windows.Forms.GroupBox funkcje;
+        private System.Windows.Forms.NumericUpDown pal;
+        private System.Windows.Forms.Label podaj_pal;
     }
 }
 
