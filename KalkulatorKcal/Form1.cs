@@ -18,8 +18,6 @@ namespace KalkulatorKcal
 
         public double Wiek { get; set; }
 
-        public double Kcal { get; set; }
-
         public double Pal { get; set; }
 
 
@@ -63,13 +61,6 @@ namespace KalkulatorKcal
             wzr2 = Math.Pow(wzr1, 0.1);
             Wzrost = wzr2;
         }
-        public void kcal_ValueChanged(object sender, EventArgs e)
-        {
-            double kcl;
-            kcl = decimal.ToDouble(kcal.Value);
-            Kcal = kcl;
-        }
-
         private void pal_ValueChanged(object sender, EventArgs e)
         {
             double pal1, pal2;
@@ -101,19 +92,6 @@ namespace KalkulatorKcal
                 MessageBox.Show("BMR wynosi: " + Math.Round(wynikBMRkobieta, 2));
             }
         }
-
-        private void przytyc_Click(object sender, EventArgs e)
-        {
-            if (kobieta.Checked is true)
-            {
-
-            }
-            else
-            {
-
-            }
-        }
-               
     }
 
     public class Kalkulator : Form1
@@ -139,12 +117,6 @@ namespace KalkulatorKcal
         {
             var deficytMezczyzna = 655 + (9.6 * waga) + (1.8 * wzrost) - (4.7 * wiek) * pal;
             return deficytMezczyzna;
-        }
-        
-        public double WZROST_Metoda(double waga, double wzrost)
-        {
-            var bmiWynik = waga / (wzrost * wzrost);
-            return bmiWynik;
         }
 
     }

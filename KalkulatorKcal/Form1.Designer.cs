@@ -38,12 +38,9 @@ namespace KalkulatorKcal
             this.podaj_wage = new System.Windows.Forms.Label();
             this.waga = new System.Windows.Forms.NumericUpDown();
             this.podaj_wzrost = new System.Windows.Forms.Label();
-            this.wzrost = new System.Windows.Forms.NumericUpDown();
-            this.podaj_kcal = new System.Windows.Forms.Label();
-            this.kcal = new System.Windows.Forms.NumericUpDown();
+            this.wzrost = new System.Windows.Forms.NumericUpDown();           
             this.przycisk_bmi = new System.Windows.Forms.Button();
             this.bmr = new System.Windows.Forms.Button();
-            this.przytyc = new System.Windows.Forms.Button();
             this.parametry = new System.Windows.Forms.GroupBox();
             this.pal = new System.Windows.Forms.NumericUpDown();
             this.podaj_pal = new System.Windows.Forms.Label();
@@ -53,7 +50,6 @@ namespace KalkulatorKcal
             ((System.ComponentModel.ISupportInitialize)(this.wiek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wzrost)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kcal)).BeginInit();
             this.parametry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pal)).BeginInit();
             this.funkcje.SuspendLayout();
@@ -195,40 +191,7 @@ namespace KalkulatorKcal
             0,
             0,
             0});
-            this.wzrost.ValueChanged += new System.EventHandler(this.wzrost_ValueChanged);
-            // 
-            // podaj_kcal
-            // 
-            this.podaj_kcal.AutoSize = true;
-            this.podaj_kcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.podaj_kcal.Location = new System.Drawing.Point(361, 129);
-            this.podaj_kcal.Name = "podaj_kcal";
-            this.podaj_kcal.Size = new System.Drawing.Size(218, 20);
-            this.podaj_kcal.TabIndex = 10;
-            this.podaj_kcal.Text = "Dzienne spożycie (kcal):";
-            // 
-            // kcal
-            // 
-            this.kcal.Location = new System.Drawing.Point(361, 165);
-            this.kcal.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.kcal.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.kcal.Name = "kcal";
-            this.kcal.Size = new System.Drawing.Size(91, 27);
-            this.kcal.TabIndex = 11;
-            this.kcal.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.kcal.ValueChanged += new System.EventHandler(this.kcal_ValueChanged);
+            this.wzrost.ValueChanged += new System.EventHandler(this.wzrost_ValueChanged);            
             // 
             // przycisk_bmi
             // 
@@ -256,19 +219,6 @@ namespace KalkulatorKcal
             this.bmr.UseVisualStyleBackColor = false;
             this.bmr.Click += new System.EventHandler(this.bmr_Click);
             // 
-            // przytyc
-            // 
-            this.przytyc.BackColor = System.Drawing.Color.Aqua;
-            this.przytyc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.przytyc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.przytyc.Location = new System.Drawing.Point(97, 161);
-            this.przytyc.Name = "przytyc";
-            this.przytyc.Size = new System.Drawing.Size(94, 29);
-            this.przytyc.TabIndex = 16;
-            this.przytyc.Text = "WZROST";
-            this.przytyc.UseVisualStyleBackColor = false;
-            this.przytyc.Click += new System.EventHandler(this.przytyc_Click);
-            // 
             // parametry
             // 
             this.parametry.Controls.Add(this.pal);
@@ -277,7 +227,6 @@ namespace KalkulatorKcal
             this.parametry.Controls.Add(this.mezczyzna);
             this.parametry.Controls.Add(this.kobieta);
             this.parametry.Controls.Add(this.podaj_wage);
-            this.parametry.Controls.Add(this.kcal);
             this.parametry.Controls.Add(this.waga);
             this.parametry.Controls.Add(this.podaj_kcal);
             this.parametry.Controls.Add(this.podaj_wzrost);
@@ -318,7 +267,6 @@ namespace KalkulatorKcal
             // 
             this.funkcje.Controls.Add(this.przycisk_bmi);
             this.funkcje.Controls.Add(this.bmr);
-            this.funkcje.Controls.Add(this.przytyc);
             this.funkcje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.funkcje.Location = new System.Drawing.Point(692, 452);
             this.funkcje.Name = "funkcje";
@@ -363,7 +311,6 @@ namespace KalkulatorKcal
             ((System.ComponentModel.ISupportInitialize)(this.wiek)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.waga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wzrost)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kcal)).EndInit();
             this.parametry.ResumeLayout(false);
             this.parametry.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pal)).EndInit();
@@ -384,10 +331,8 @@ namespace KalkulatorKcal
         private System.Windows.Forms.Label podaj_wzrost;
         private System.Windows.Forms.NumericUpDown wzrost;
         private System.Windows.Forms.Label podaj_kcal;
-        private System.Windows.Forms.NumericUpDown kcal;
         private System.Windows.Forms.Button przycisk_bmi;
         private System.Windows.Forms.Button bmr;
-        private System.Windows.Forms.Button przytyc;
         private System.Windows.Forms.GroupBox parametry;
         private System.Windows.Forms.GroupBox funkcje;
         private System.Windows.Forms.NumericUpDown pal;
