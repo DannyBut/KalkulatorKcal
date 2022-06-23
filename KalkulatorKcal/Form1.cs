@@ -76,9 +76,6 @@ namespace KalkulatorKcal
             pal1 = decimal.ToDouble(pal.Value);
             pal2 = pal1 * 0.1;            
             Pal = pal2;
-
-            MessageBox.Show("PAL wynosi: " + Math.Round(pal2, 1));
-
         }
 
         public void przycisk_bmi_Click(object sender, EventArgs e)
@@ -89,11 +86,11 @@ namespace KalkulatorKcal
             MessageBox.Show("Twoje BMI wynosi: " + Math.Round(wynikBMI, 2));
         }
 
-        private void brm_Click(object sender, EventArgs e)
+        private void bmr_Click(object sender, EventArgs e)
         {
             var kalkulator = new Kalkulator();
-            var wynikBMRmezczyzna = kalkulator.DEFICYT_Mezczyzna_Metoda(Waga, Wzrost, Wiek);
-            var wynikBMRkobieta = kalkulator.DEFICYT_Kobieta_Metoda(Waga, Wzrost, Wiek);
+            var wynikBMRmezczyzna = kalkulator.DEFICYT_Mezczyzna_Metoda(Waga, Wzrost, Wiek, Pal);
+            var wynikBMRkobieta = kalkulator.DEFICYT_Kobieta_Metoda(Waga, Wzrost, Wiek, Pal);
 
             if (mezczyzna.Checked is true)
             {
@@ -101,7 +98,7 @@ namespace KalkulatorKcal
             }
             else
             {
-                MessageBox.Show("BMR wynosi:" + Math.Round(wynikBMRkobieta, 2));
+                MessageBox.Show("BMR wynosi: " + Math.Round(wynikBMRkobieta, 2));
             }
         }
 
@@ -116,8 +113,7 @@ namespace KalkulatorKcal
 
             }
         }
-
-       
+               
     }
 
     public class Kalkulator : Form1
@@ -133,15 +129,15 @@ namespace KalkulatorKcal
             return bmiWynik;
         }
 
-        public double DEFICYT_Mezczyzna_Metoda(double waga, double wzrost, double wiek)
+        public double DEFICYT_Mezczyzna_Metoda(double waga, double wzrost, double wiek, double pal)
         {
-            var deficytMezczyzna = 66 + (13.7 * waga) + (5 * wzrost) - (6.8 * wiek);
+            var deficytMezczyzna = 66 + (13.7 * waga) + (5 * wzrost) - (6.8 * wiek) * pal;
             return deficytMezczyzna;
         }
 
-        public double DEFICYT_Kobieta_Metoda(double waga, double wzrost, double wiek)
+        public double DEFICYT_Kobieta_Metoda(double waga, double wzrost, double wiek, double pal)
         {
-            var deficytMezczyzna = 655 + (9.6 * waga) + (1.8 * wzrost) - (4.7 * wiek);
+            var deficytMezczyzna = 655 + (9.6 * waga) + (1.8 * wzrost) - (4.7 * wiek) * pal;
             return deficytMezczyzna;
         }
         

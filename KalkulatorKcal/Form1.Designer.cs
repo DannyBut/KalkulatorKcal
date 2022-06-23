@@ -29,6 +29,7 @@ namespace KalkulatorKcal
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.mezczyzna = new System.Windows.Forms.CheckBox();
             this.kobieta = new System.Windows.Forms.CheckBox();
             this.plec = new System.Windows.Forms.Label();
@@ -41,19 +42,22 @@ namespace KalkulatorKcal
             this.podaj_kcal = new System.Windows.Forms.Label();
             this.kcal = new System.Windows.Forms.NumericUpDown();
             this.przycisk_bmi = new System.Windows.Forms.Button();
-            this.brm = new System.Windows.Forms.Button();
+            this.bmr = new System.Windows.Forms.Button();
             this.przytyc = new System.Windows.Forms.Button();
             this.parametry = new System.Windows.Forms.GroupBox();
-            this.funkcje = new System.Windows.Forms.GroupBox();
-            this.podaj_pal = new System.Windows.Forms.Label();
             this.pal = new System.Windows.Forms.NumericUpDown();
+            this.podaj_pal = new System.Windows.Forms.Label();
+            this.funkcje = new System.Windows.Forms.GroupBox();
+            this.opis = new System.Windows.Forms.GroupBox();
+            this.wprowadzony_opis = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.wiek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wzrost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kcal)).BeginInit();
             this.parametry.SuspendLayout();
-            this.funkcje.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pal)).BeginInit();
+            this.funkcje.SuspendLayout();
+            this.opis.SuspendLayout();
             this.SuspendLayout();
             // 
             // mezczyzna
@@ -239,18 +243,18 @@ namespace KalkulatorKcal
             this.przycisk_bmi.UseVisualStyleBackColor = false;
             this.przycisk_bmi.Click += new System.EventHandler(this.przycisk_bmi_Click);
             // 
-            // brm
+            // bmr
             // 
-            this.brm.BackColor = System.Drawing.Color.Aqua;
-            this.brm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.brm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.brm.Location = new System.Drawing.Point(97, 105);
-            this.brm.Name = "brm";
-            this.brm.Size = new System.Drawing.Size(94, 29);
-            this.brm.TabIndex = 15;
-            this.brm.Text = "BRM";
-            this.brm.UseVisualStyleBackColor = false;
-            this.brm.Click += new System.EventHandler(this.brm_Click);
+            this.bmr.BackColor = System.Drawing.Color.Aqua;
+            this.bmr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bmr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bmr.Location = new System.Drawing.Point(97, 105);
+            this.bmr.Name = "bmr";
+            this.bmr.Size = new System.Drawing.Size(94, 29);
+            this.bmr.TabIndex = 15;
+            this.bmr.Text = "BMR";
+            this.bmr.UseVisualStyleBackColor = false;
+            this.bmr.Click += new System.EventHandler(this.bmr_Click);
             // 
             // przytyc
             // 
@@ -281,34 +285,12 @@ namespace KalkulatorKcal
             this.parametry.Controls.Add(this.wzrost);
             this.parametry.Controls.Add(this.podaj_wiek);
             this.parametry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.parametry.Location = new System.Drawing.Point(24, 12);
+            this.parametry.Location = new System.Drawing.Point(29, 451);
             this.parametry.Name = "parametry";
             this.parametry.Size = new System.Drawing.Size(591, 233);
             this.parametry.TabIndex = 17;
             this.parametry.TabStop = false;
             this.parametry.Text = "Parametry";
-            // 
-            // funkcje
-            // 
-            this.funkcje.Controls.Add(this.przycisk_bmi);
-            this.funkcje.Controls.Add(this.brm);
-            this.funkcje.Controls.Add(this.przytyc);
-            this.funkcje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.funkcje.Location = new System.Drawing.Point(687, 13);
-            this.funkcje.Name = "funkcje";
-            this.funkcje.Size = new System.Drawing.Size(276, 232);
-            this.funkcje.TabIndex = 18;
-            this.funkcje.TabStop = false;
-            this.funkcje.Text = "Funkcje";
-            // 
-            // podaj_pal
-            // 
-            this.podaj_pal.AutoSize = true;
-            this.podaj_pal.Location = new System.Drawing.Point(7, 129);
-            this.podaj_pal.Name = "podaj_pal";
-            this.podaj_pal.Size = new System.Drawing.Size(103, 20);
-            this.podaj_pal.TabIndex = 12;
-            this.podaj_pal.Text = "Podal PAL:";
             // 
             // pal
             // 
@@ -323,13 +305,57 @@ namespace KalkulatorKcal
             this.pal.TabIndex = 13;
             this.pal.ValueChanged += new System.EventHandler(this.pal_ValueChanged);
             // 
+            // podaj_pal
+            // 
+            this.podaj_pal.AutoSize = true;
+            this.podaj_pal.Location = new System.Drawing.Point(7, 129);
+            this.podaj_pal.Name = "podaj_pal";
+            this.podaj_pal.Size = new System.Drawing.Size(103, 20);
+            this.podaj_pal.TabIndex = 12;
+            this.podaj_pal.Text = "Podal PAL:";
+            // 
+            // funkcje
+            // 
+            this.funkcje.Controls.Add(this.przycisk_bmi);
+            this.funkcje.Controls.Add(this.bmr);
+            this.funkcje.Controls.Add(this.przytyc);
+            this.funkcje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.funkcje.Location = new System.Drawing.Point(692, 452);
+            this.funkcje.Name = "funkcje";
+            this.funkcje.Size = new System.Drawing.Size(276, 232);
+            this.funkcje.TabIndex = 18;
+            this.funkcje.TabStop = false;
+            this.funkcje.Text = "Funkcje";
+            // 
+            // opis
+            // 
+            this.opis.Controls.Add(this.wprowadzony_opis);
+            this.opis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.opis.Location = new System.Drawing.Point(29, 28);
+            this.opis.Name = "opis";
+            this.opis.Size = new System.Drawing.Size(939, 398);
+            this.opis.TabIndex = 19;
+            this.opis.TabStop = false;
+            this.opis.Text = "Opis";
+            // 
+            // wprowadzony_opis
+            // 
+            this.wprowadzony_opis.BackColor = System.Drawing.Color.Honeydew;
+            this.wprowadzony_opis.Location = new System.Drawing.Point(49, 54);
+            this.wprowadzony_opis.Name = "wprowadzony_opis";
+            this.wprowadzony_opis.ReadOnly = true;
+            this.wprowadzony_opis.Size = new System.Drawing.Size(805, 278);
+            this.wprowadzony_opis.TabIndex = 0;
+            this.wprowadzony_opis.Text = resources.GetString("wprowadzony_opis.Text");
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(988, 268);
+            this.ClientSize = new System.Drawing.Size(1033, 738);
+            this.Controls.Add(this.opis);
             this.Controls.Add(this.funkcje);
             this.Controls.Add(this.parametry);
             this.Name = "Form1";
@@ -340,8 +366,9 @@ namespace KalkulatorKcal
             ((System.ComponentModel.ISupportInitialize)(this.kcal)).EndInit();
             this.parametry.ResumeLayout(false);
             this.parametry.PerformLayout();
-            this.funkcje.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pal)).EndInit();
+            this.funkcje.ResumeLayout(false);
+            this.opis.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -359,12 +386,14 @@ namespace KalkulatorKcal
         private System.Windows.Forms.Label podaj_kcal;
         private System.Windows.Forms.NumericUpDown kcal;
         private System.Windows.Forms.Button przycisk_bmi;
-        private System.Windows.Forms.Button brm;
+        private System.Windows.Forms.Button bmr;
         private System.Windows.Forms.Button przytyc;
         private System.Windows.Forms.GroupBox parametry;
         private System.Windows.Forms.GroupBox funkcje;
         private System.Windows.Forms.NumericUpDown pal;
         private System.Windows.Forms.Label podaj_pal;
+        private System.Windows.Forms.GroupBox opis;
+        private System.Windows.Forms.RichTextBox wprowadzony_opis;
     }
 }
 

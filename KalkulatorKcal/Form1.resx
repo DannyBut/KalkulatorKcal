@@ -57,4 +57,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="wprowadzony_opis.Text" xml:space="preserve">
+    <value>Aplikacja umożliwia na obliczanie wskaźników BMI oraz BRM.
+By je obliczyć należy następujące zmienna:
+płeć, wagę(kg), wzrost(cm), wiek(lata), oraz wskaźnik PAL.
+
+Wartości dla wskaźnika PAL:
+12 Brak aktywności fizycznej
+14 Lekka aktywność (aktywność – ok. 140 minut tygodniowo)
+16 Średnia aktywność (aktywność – ok. 280 minut tygodniowo)
+18 Wysoka aktywność (aktywność – ok. 420 minut tygodniowo)
+20 Bardzo wysoka aktywność fizyczna (aktywność – ok. 560 minut) </value>
+  </data>
 </root>
