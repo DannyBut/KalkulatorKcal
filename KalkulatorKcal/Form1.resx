@@ -58,7 +58,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="wprowadzony_opis.Text" xml:space="preserve">
-    <value>Aplikacja umożliwia na obliczanie wskaźników BMI oraz BRM.
+    <value>Aplikacja umożliwia na obliczanie wskaźników BMI oraz BMR.
 By je obliczyć należy następujące zmienna:
 płeć, wagę(kg), wzrost(cm), wiek(lata), oraz wskaźnik PAL.
 
