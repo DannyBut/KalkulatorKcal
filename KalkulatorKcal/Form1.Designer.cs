@@ -41,8 +41,8 @@ namespace KalkulatorKcal
             this.podaj_kcal = new System.Windows.Forms.Label();
             this.kcal = new System.Windows.Forms.NumericUpDown();
             this.przycisk_bmi = new System.Windows.Forms.Button();
+            this.schudnac = new System.Windows.Forms.Button();
             this.przytyc = new System.Windows.Forms.Button();
-            this.przyrost = new System.Windows.Forms.Button();
             this.parametry = new System.Windows.Forms.GroupBox();
             this.funkcje = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.wiek)).BeginInit();
@@ -236,29 +236,31 @@ namespace KalkulatorKcal
             this.przycisk_bmi.UseVisualStyleBackColor = false;
             this.przycisk_bmi.Click += new System.EventHandler(this.przycisk_bmi_Click);
             // 
+            // schudnac
+            // 
+            this.schudnac.BackColor = System.Drawing.Color.Aqua;
+            this.schudnac.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.schudnac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.schudnac.Location = new System.Drawing.Point(97, 105);
+            this.schudnac.Name = "schudnac";
+            this.schudnac.Size = new System.Drawing.Size(94, 29);
+            this.schudnac.TabIndex = 15;
+            this.schudnac.Text = "DEFICYT";
+            this.schudnac.UseVisualStyleBackColor = false;
+            this.schudnac.Click += new System.EventHandler(this.schudnac_Click);
+            // 
             // przytyc
             // 
             this.przytyc.BackColor = System.Drawing.Color.Aqua;
             this.przytyc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.przytyc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.przytyc.Location = new System.Drawing.Point(97, 105);
+            this.przytyc.Location = new System.Drawing.Point(97, 161);
             this.przytyc.Name = "przytyc";
             this.przytyc.Size = new System.Drawing.Size(94, 29);
-            this.przytyc.TabIndex = 15;
-            this.przytyc.Text = "DEFICYT";
+            this.przytyc.TabIndex = 16;
+            this.przytyc.Text = "WZROST";
             this.przytyc.UseVisualStyleBackColor = false;
-            // 
-            // przyrost
-            // 
-            this.przyrost.BackColor = System.Drawing.Color.Aqua;
-            this.przyrost.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.przyrost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.przyrost.Location = new System.Drawing.Point(97, 161);
-            this.przyrost.Name = "przyrost";
-            this.przyrost.Size = new System.Drawing.Size(94, 29);
-            this.przyrost.TabIndex = 16;
-            this.przyrost.Text = "WZROST";
-            this.przyrost.UseVisualStyleBackColor = false;
+            this.przytyc.Click += new System.EventHandler(this.przytyc_Click);
             // 
             // parametry
             // 
@@ -284,8 +286,8 @@ namespace KalkulatorKcal
             // funkcje
             // 
             this.funkcje.Controls.Add(this.przycisk_bmi);
+            this.funkcje.Controls.Add(this.schudnac);
             this.funkcje.Controls.Add(this.przytyc);
-            this.funkcje.Controls.Add(this.przyrost);
             this.funkcje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.funkcje.Location = new System.Drawing.Point(687, 13);
             this.funkcje.Name = "funkcje";
@@ -329,8 +331,8 @@ namespace KalkulatorKcal
         private System.Windows.Forms.Label podaj_kcal;
         private System.Windows.Forms.NumericUpDown kcal;
         private System.Windows.Forms.Button przycisk_bmi;
+        private System.Windows.Forms.Button schudnac;
         private System.Windows.Forms.Button przytyc;
-        private System.Windows.Forms.Button przyrost;
         private System.Windows.Forms.GroupBox parametry;
         private System.Windows.Forms.GroupBox funkcje;
     }

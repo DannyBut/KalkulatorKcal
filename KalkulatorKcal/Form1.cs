@@ -12,7 +12,13 @@ namespace KalkulatorKcal
 {
     public partial class Form1 : Form
     {
-        
+        public double Waga { get; set; }
+
+        public double Wzrost { get; set; }
+
+        public double Wiek { get; set; }
+
+        public double Kcal { get; set; }
 
         public Form1()
         {
@@ -37,36 +43,98 @@ namespace KalkulatorKcal
 
         public void wiek_ValueChanged(object sender, EventArgs e)
         {
-            
+            double wik;
+            wik = decimal.ToDouble(wiek.Value);
+            Wiek = wik;
         }
         public void waga_ValueChanged(object sender, EventArgs e)
         {
-           
+            double wag;
+            wag = decimal.ToDouble(waga.Value);
+            Waga = wag;
         }
         public void wzrost_ValueChanged(object sender, EventArgs e)
         {
-            
+            double wzr1, wzr2;
+            wzr1 = decimal.ToDouble(wzrost.Value);
+            wzr2 = Math.Pow(wzr1, 0.1);
+            Wzrost = wzr2;
         }
         public void kcal_ValueChanged(object sender, EventArgs e)
         {
-            
+            double kcl;
+            kcl = decimal.ToDouble(kcal.Value);
+            Kcal = kcl;
         }
 
         public void przycisk_bmi_Click(object sender, EventArgs e)
         {
-            double wzr1, wzr2, wag, wzr3, bmi;
-            wzr1 = decimal.ToDouble(wzrost.Value);
-            wzr2 = Math.Pow(wzr1, 0.1);
-            wag = decimal.ToDouble(waga.Value);
-            wzr3 = (wzr2 * wzr2);
-            bmi = (wag / wzr3);
-            MessageBox.Show("Twoje BMI wynosi: " + Math.Round(bmi, 2));
+            var kalkulator = new Kalkulator();
+            var wynikBMI = kalkulator.BMI_Metoda(Waga, Wzrost);
+
+            MessageBox.Show("Twoje BMI wynosi: " + Math.Round(wynikBMI, 2));
+        }
+
+        private void schudnac_Click(object sender, EventArgs e)
+        {
+            var kalkulator = new Kalkulator();
+            var wynikBMRmezczyzna = kalkulator.DEFICYT_Mezczyzna_Metoda(Waga, Wzrost, Wiek);
+            var wynikBMRkobieta = kalkulator.DEFICYT_Kobieta_Metoda(Waga, Wzrost, Wiek);
+
+            if (mezczyzna.Checked is true)
+            {
+                MessageBox.Show("BMR wynosi: " + Math.Round(wynikBMRmezczyzna, 2));
+            }
+            else
+            {
+                MessageBox.Show("BMR wynosi:" + Math.Round(wynikBMRkobieta, 2));
+            }
+        }
+
+        private void przytyc_Click(object sender, EventArgs e)
+        {
+            if (kobieta.Checked is true)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 
-    public partial class Kalkulator : Form1
+    public class Kalkulator : Form1
     {
-      
+
+        public Kalkulator()
+        {
+        }
+
+        public double BMI_Metoda(double waga, double wzrost)
+        {
+            var bmiWynik = waga / (wzrost * wzrost);
+            return bmiWynik;
+        }
+
+        public double DEFICYT_Mezczyzna_Metoda(double waga, double wzrost, double wiek)
+        {
+            var deficytMezczyzna = 66 + (13.7 * waga) + (5 * wzrost) - (6.8 * wiek);
+            return deficytMezczyzna;
+        }
+
+        public double DEFICYT_Kobieta_Metoda(double waga, double wzrost, double wiek)
+        {
+            var deficytMezczyzna = 655 + (9.6 * waga) + (1.8 * wzrost) - (4.7 * wiek);
+            return deficytMezczyzna;
+        }
+        
+        public double WZROST_Metoda(double waga, double wzrost)
+        {
+            var bmiWynik = waga / (wzrost * wzrost);
+            return bmiWynik;
+        }
+
     }
 
-}
+}     
