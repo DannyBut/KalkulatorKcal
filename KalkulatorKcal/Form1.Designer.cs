@@ -305,7 +305,7 @@ namespace KalkulatorKcal
             this.Controls.Add(this.opis);
             this.Controls.Add(this.funkcje);
             this.Controls.Add(this.parametry);
-            this.Enabled = false;
+            this.Enabled = true;
             this.Name = "Form1";
             this.Text = "KalkulatorKcal";
             ((System.ComponentModel.ISupportInitialize)(this.wiek)).EndInit();
@@ -330,7 +330,6 @@ namespace KalkulatorKcal
         private System.Windows.Forms.NumericUpDown waga;
         private System.Windows.Forms.Label podaj_wzrost;
         private System.Windows.Forms.NumericUpDown wzrost;
-        private System.Windows.Forms.Label podaj_kcal;
         private System.Windows.Forms.Button przycisk_bmi;
         private System.Windows.Forms.Button bmr;
         private System.Windows.Forms.GroupBox parametry;
